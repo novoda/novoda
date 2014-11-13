@@ -4,7 +4,7 @@ At Novoda we use open source libraries in our projects, therefore we feel a duty
 
 We encourage everyone inside and outside Novoda to contribute to the projects using Github's pull requests.
 
-## Issuing a Pull Request
+## Issuing a pull request
 
 Github makes it really easy to create a pull pequest (PR) against a repo. Just fork it, implement your changes and create a pull request back to the original repo.
 
