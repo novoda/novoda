@@ -7,7 +7,7 @@ We encourage everyone inside and outside Novoda to contribute to our projects us
 
 ## Issuing a Pull Request
 
-Github makes it really easy to create a Pull Request (PR) against a repo. Just for it to your account, implement your changes and create a Pull Request back to the original repo.
+Github makes it really easy to create a Pull Request (PR) against a repo. Just fork it, implement your changes and create a Pull Request back to the original repo.
 
 The PR should follow this format:
 
