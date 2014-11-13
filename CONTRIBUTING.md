@@ -1,13 +1,12 @@
 # Contributing to Novoda's Open Source projects
 
-At Novoda we use Open Source libraries in our projects, therefore one of our duties is to contribute back to the community by open sourcing projects that we use on our day to day development work.
+At Novoda we use open source libraries in our projects, therefore we feel a duty is to contribute back to the community by open sourcing projects that we use in our day to day development work.
 
-We encourage everyone inside and outside Novoda to contribute to our projects using Github's Pull Requests.
-
+We encourage everyone inside and outside Novoda to contribute to the projects using Github's pull requests.
 
 ## Issuing a Pull Request
 
-Github makes it really easy to create a Pull Request (PR) against a repo. Just fork it, implement your changes and create a Pull Request back to the original repo.
+Github makes it really easy to create a pull pequest (PR) against a repo. Just fork it, implement your changes and create a pull request back to the original repo.
 
 The PR should follow this format:
 
