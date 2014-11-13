@@ -39,3 +39,5 @@ We use a pretty standard Java code formatting:
         value = 3;
     }
     ```
+
+To make it easier we've made public the IDE settings we use internally so that you can import them if you want: https://github.com/novoda/novoda/tree/master/ide-settings
