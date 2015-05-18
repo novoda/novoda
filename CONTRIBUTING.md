@@ -21,7 +21,7 @@ When you issue a PR, please take some time to consider writing tests for the iss
 
 Also make sure the project builds and all the tests pass before creating the PR.
 
-Non tested PR will not be merged back.
+A non tested PR will not be merged back.
 
 
 ## Code formatting
