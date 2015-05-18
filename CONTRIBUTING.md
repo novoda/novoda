@@ -1,7 +1,5 @@
 # Contributing to Novoda's Open Source projects
 
-At Novoda we use open source libraries in our projects, therefore we feel a duty is to contribute back to the community by open sourcing projects that we use in our day to day development work.
-
 We encourage everyone inside and outside Novoda to contribute to the projects using Github's pull requests.
 
 ## Issuing a pull request
@@ -19,9 +17,11 @@ The PR should follow this format:
 
 ## Writing tests
 
-Novoda is known for delivering quality, and one key point to create high quality software is by complementing it with a meaningful suite of tests. When you issue a PR, please take some time to consider writing tests for the issue. For example if you're solving a bug, you could write the test that reproduces the bug first, then fix the issue. This makes sure the bug doesn't come back later.
+When you issue a PR, please take some time to consider writing tests for the issue. For example if you're solving a bug, you could write the test that reproduces the bug first, then fix the issue. This makes sure the bug doesn't come back later.
 
 Also make sure the project builds and all the tests pass before creating the PR.
+
+Non tested PR will not be merged back.
 
 
 ## Code formatting
