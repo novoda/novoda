@@ -1,0 +1,36 @@
+{
+  "demos": [
+    {
+      "title": "Simple Demo for Download Manager",
+      "url": "https://github.com/novoda/download-manager/tree/master/demo-simple"
+    },
+    {
+      "title": "Extended Demo for Download Manager",
+      "url": "https://github.com/novoda/download-manager/tree/master/demo-extended"
+    },
+    {
+      "title": "Demo for Reactive Espresso Testing",
+      "url": "https://github.com/novoda/rxpresso/tree/master/demo"
+    },
+    {
+      "title": "Demo for Landing Strip (sliding viewpager tab strip)",
+      "url": "https://github.com/novoda/landing-strip/tree/master/demo"
+    },
+    {
+      "title": "Demo for Reactive Mocking",
+      "url": "https://github.com/novoda/rxmocks/tree/master/demo"
+    },
+    {
+      "title": "Demo for image based palettes",
+      "url": "https://github.com/novoda/material-painter"
+    },
+    {
+      "title": "Demo for Merlin (network connectivity)",
+      "url": "https://github.com/novoda/merlin/tree/master/demo"
+    },
+    {
+      "title": "Demo for simple XML parsing",
+      "url": "https://github.com/novoda/simple-easy-xml-parser/tree/master/demoAndroid"
+    }
+  ]
+}
