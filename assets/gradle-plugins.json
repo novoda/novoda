@@ -1,0 +1,20 @@
+{
+  "gradle-plugins": [
+    {
+      "title": "Bintray Release",
+      "url": "https://github.com/novoda/bintray-release"
+    },
+    {
+      "title": "Sqlite Analyzer",
+      "url": "https://github.com/novoda/sqlite-analyzer"
+    },
+    {
+      "title": "Android Command Plugin",
+      "url": "https://github.com/novoda/gradle-android-command-plugin"
+    },
+    {
+      "title": "Compare Reports",
+      "url": "https://github.com/novoda/spikes/tree/master/compare-reports"
+    }
+  ]
+}
