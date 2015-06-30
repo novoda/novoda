@@ -1,0 +1,33 @@
+{
+  "libs": [
+    {
+      "title": "Download Manager",
+      "url": "https://github.com/novoda/download-manager"
+    },
+    {
+      "title": "Merlin - Connectivity Checker",
+      "url": "https://github.com/novoda/merlin"
+    },
+    {
+      "title": "Landing Strip",
+      "url": "https://github.com/novoda/landing-strip"
+    },
+    {
+      "title": "Sqlite Provider",
+      "url": "https://github.com/novoda/sqlite-provider"
+    },
+    {
+      "title": "Notils",
+      "url": "https://github.com/novoda/notils"
+    },
+    {
+      "title": "Simple XML Parser",
+      "url": "https://github.com/novoda/simple-easy-xml-parser"
+    },
+    {
+      "title": "RxPresso",
+      "url": "https://github.com/novoda/rxpresso"
+    }
+  ]
+}
+
