@@ -1,0 +1,23 @@
+<application>
+  <component name="CodeInsightSettings">
+    <option name="PARAMETER_INFO_DELAY" value="200" />
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <option name="JAVADOC_INFO_DELAY" value="200" />
+    <option name="REFORMAT_ON_PASTE" value="4" />
+    <option name="HIGHLIGHT_SCOPE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_ON_THE_FLY" value="true" />
+    <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
+  </component>
+  <component name="DaemonCodeAnalyzerSettings">
+    <option name="ERROR_STRIPE_MARK_MIN_HEIGHT" value="3" />
+  </component>
+  <component name="JavaCodeFoldingSettings">
+    <option name="collapseConstructorGenericParameters" value="false" />
+    <option name="collapseLambdas" value="false" />
+    <option name="collapseSuppressWarnings" value="false" />
+    <option name="COLLAPSE_ONE_LINE_METHODS" value="false" />
+    <option name="COLLAPSE_CLOSURES" value="false" />
+    <option name="COLLAPSE_CONSTRUCTOR_GENERIC_PARAMETERS" value="false" />
+    <option name="COLLAPSE_SUPPRESS_WARNINGS" value="false" />
+  </component>
+</application>

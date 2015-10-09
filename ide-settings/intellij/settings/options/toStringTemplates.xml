@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="ToStringTemplates">
+    <option name="defaultTempalteName" value="String concat (+)" />
+    <option name="templates">
+      <list>
+        <TemplateResource>
+          <option name="fileName" value="String concat (+)" />
+          <option name="template" value="public java.lang.String toString() {&#10;#if ( $members.size() &gt; 0 )&#10;#set ( $i = 0 )&#10;    return &quot;$classname{&quot; +&#10;#foreach( $member in $members )&#10;#if ( $i == 0 )&#10;    &quot;##&#10;#else&#10;    &quot;, ##&#10;#end&#10;#if ( $member.objectArray )&#10;#if ($java_version &lt; 5)&#10;$member.name=&quot; + ($member.accessor == null ? null : java.util.Arrays.asList($member.accessor)) +&#10;#else&#10;$member.name=&quot; + java.util.Arrays.toString($member.accessor) +&#10;#end&#10;#elseif ( $member.primitiveArray &amp;&amp; $java_version &gt;= 5)&#10;$member.name=&quot; + java.util.Arrays.toString($member.accessor) +&#10;#elseif ( $member.string )&#10;$member.name='&quot; + $member.accessor + '\'' +&#10;#else&#10;$member.name=&quot; + $member.accessor +&#10;#end&#10;#set ( $i = $i + 1 )&#10;#end&#10;    '}';&#10;#else&#10;    return &quot;$classname{}&quot;;&#10;#end&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="String concat (+) and super.toString()" />
+          <option name="template" value="public java.lang.String toString() {&#10;#if ( $members.size() &gt; 0 )&#10;#set ( $i = 0 )&#10;    return &quot;$classname{&quot; +&#10;#foreach( $member in $members )&#10;#if ( $i == 0 )&#10;    &quot;##&#10;#else&#10;    &quot;, ##&#10;#end&#10;#if ( $member.objectArray )&#10;#if ($java_version &lt; 5)&#10;$member.name=&quot; + ($member.accessor == null ? null : java.util.Arrays.asList($member.accessor)) +&#10;#else&#10;$member.name=&quot; + java.util.Arrays.toString($member.accessor) +&#10;#end&#10;#elseif ( $member.primitiveArray &amp;&amp; $java_version &gt;= 5)&#10;$member.name=&quot; + java.util.Arrays.toString($member.accessor) +&#10;#elseif ( $member.string )&#10;$member.name='&quot; + $member.accessor + '\'' +&#10;#else&#10;$member.name=&quot; + $member.accessor +&#10;#end&#10;#set ( $i = $i + 1 )&#10;#end&#10;   #if ( $class.hasSuper )&#10;   &quot;} &quot; + super.toString();&#10;   #else&#10;   '}';&#10;   #end&#10;#else&#10;   #if ( $class.hasSuper )&#10;   return &quot;$classname{} &quot; + super.toString();&#10;   #else&#10;   return &quot;$classname{}&quot;;&#10;   #end&#10;#end&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="StringBuffer" />
+          <option name="template" value="public java.lang.String toString() {&#10;final java.lang.StringBuffer sb = new java.lang.StringBuffer(&quot;$classname{&quot;);&#10;#set ($i = 0)&#10;#foreach ($member in $members)&#10;#if ($i == 0)&#10;sb.append(&quot;##&#10;#else&#10;sb.append(&quot;, ##&#10;#end&#10;#if ($member.string)&#10;$member.name='&quot;)##&#10;#else&#10;$member.name=&quot;)##&#10;#end&#10;#if ($member.primitiveArray)&#10;;&#10;if ($member.name == null) ##&#10;sb.append(&quot;null&quot;);&#10;else {&#10;sb.append('[');&#10;for (int i = 0; i &lt; $member.name .length; ++i)&#10;sb.append(i == 0 ? &quot;&quot; : &quot;, &quot;).append($member.name [i]);&#10;sb.append(']');&#10;}&#10;#elseif ($member.objectArray)&#10;.append($member.name == null ? &quot;null&quot; : java.util.Arrays.asList($member.name).toString());&#10;#elseif ($member.string)&#10;.append($member.accessor).append('\'');&#10;#else&#10;.append($member.accessor);&#10;#end&#10;#set ($i = $i + 1)&#10;#end&#10;sb.append('}');&#10;return sb.toString();&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="StringBuilder (JDK 1.5)" />
+          <option name="template" value="public java.lang.String toString() {&#10;final java.lang.StringBuilder sb = new java.lang.StringBuilder(&quot;$classname{&quot;);&#10;#set ($i = 0)&#10;#foreach ($member in $members)&#10;#if ($i == 0)&#10;sb.append(&quot;##&#10;#else&#10;sb.append(&quot;, ##&#10;#end&#10;#if ($member.string)&#10;$member.name='&quot;)##&#10;#else&#10;$member.name=&quot;)##&#10;#end&#10;#if ($member.primitiveArray || $member.objectArray)&#10;.append(java.util.Arrays.toString($member.name));&#10;#elseif ($member.string)&#10;.append($member.accessor).append('\'');&#10;#else&#10;.append($member.accessor);&#10;#end&#10;#set ($i = $i + 1)&#10;#end&#10;sb.append('}');&#10;return sb.toString();&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="ToStringBuilder (Apache commons-lang)" />
+          <option name="template" value="public java.lang.String toString() {&#10;   return new org.apache.commons.lang.builder.ToStringBuilder(this)&#10;#foreach ($member in $members)&#10;   .append(&quot;$member.name&quot;, $member.accessor)&#10;#end&#10;   .toString();&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="ToStringBuilder (Apache commons-lang 3)" />
+          <option name="template" value="public java.lang.String toString() {&#10;   return new org.apache.commons.lang3.builder.ToStringBuilder(this)&#10;#foreach ($member in $members)&#10;   .append(&quot;$member.name&quot;, $member.accessor)&#10;#end&#10;   .toString();&#10;}" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="Objects.toStringHelper (Guava)" />
+          <option name="template" value="public java.lang.String toString() {&#10;return com.google.common.base.Objects.toStringHelper(this)&#10;#foreach ($member in $members)&#10;.add(&quot;$member.name&quot;, $member.accessor)&#10;#end&#10;.toString();&#10;}&#10;" />
+        </TemplateResource>
+        <TemplateResource>
+          <option name="fileName" value="Groovy: String concat (+)" />
+          <option name="template" value="public java.lang.String toString() {&#10;#if ( $members.size() &gt; 0 )&#10;#set ( $i = 0 )&#10;    return &quot;&quot;&quot;\&#10;$classname{&#10;#foreach( $member in $members )&#10;#if ( $i &gt; 0 ), &#10;#end&#10;#set($d = &quot;$&quot;)&#10;#if ( $member.objectArray )&#10;    $member.name=${d}{java.util.Arrays.toString($member.accessor)}## &#10;#elseif ( $member.primitiveArray)&#10;    $member.name=${d}{java.util.Arrays.toString($member.accessor)}##&#10;#elseif ( $member.string )&#10;    $member.name='$d$member.accessor'##&#10;#else&#10;    $member.name=$d${member.accessor}##&#10;#end&#10;#set ( $i = $i + 1 )&#10;#end&#10;&#10;}&quot;&quot;&quot;&#10;#else&#10;    return &quot;$classname{}&quot;&#10;#end&#10;}" />
+        </TemplateResource>
+      </list>
+    </option>
+  </component>
+</application>
+
