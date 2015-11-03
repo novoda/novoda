@@ -1,0 +1,4 @@
+com.intellij
+com.thoughtworks.gauge
+net.nicoulaj.idea.markdown
+org.intellij.plugins.markdown

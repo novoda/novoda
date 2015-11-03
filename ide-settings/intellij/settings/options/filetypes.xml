@@ -1,0 +1,33 @@
+<application>
+  <component name="CommunityFileTypes" version="11">
+    <ignoreFiles list="CVS;SCCS;RCS;rcs;.DS_Store;.svn;.pyc;.pyo;*.pyc;*.pyo;.git;*.hprof;_svn;.hg;*.lib;*~;__pycache__;.bundle;*.rbc;" />
+    <extensionMap>
+      <mapping pattern="sddd" type="CLASS" />
+      <mapping ext="old" type="Images" />
+      <mapping pattern="list_favourites" type="PLAIN_TEXT" />
+      <mapping pattern="3_create_table_collection_point" type="PLAIN_TEXT" />
+      <mapping pattern="list_delivery_slots" type="PLAIN_TEXT" />
+      <mapping ext="json" type="PLAIN_TEXT" />
+      <mapping ext="jspx" type="XML" />
+      <mapping ext="tagx" type="XML" />
+    </extensionMap>
+  </component>
+  <component name="FileTypeManager" version="14">
+    <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.bundle;.git;.hg;.svn;.tox;CVS;RCS;SCCS;__pycache__;_svn;rcs;" />
+    <extensionMap>
+      <mapping pattern="sessions_unactivated" type="PLAIN_TEXT" />
+      <mapping pattern="2_RELEASE_V1" type="PLAIN_TEXT" />
+      <mapping pattern="sessions_loggedin" type="PLAIN_TEXT" />
+      <mapping ext="atom" type="PLAIN_TEXT" />
+      <mapping ext="cfg" type="PLAIN_TEXT" />
+      <mapping ext="token" type="PLAIN_TEXT" />
+      <mapping ext="keystore" type="PLAIN_TEXT" />
+      <mapping ext="file" type="PLAIN_TEXT" />
+      <mapping ext="so" type="PLAIN_TEXT" />
+      <mapping ext="placeholder" type="PLAIN_TEXT" />
+      <removed_mapping ext="so" type="UNKNOWN" />
+      <mapping pattern="android_support_v4" type="XML" />
+      <mapping pattern="dimens-help-and-feedback" type="XML" />
+    </extensionMap>
+  </component>
+</application>

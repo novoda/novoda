@@ -1,0 +1,13 @@
+<application>
+  <component name="EditorSettings">
+    <option name="USE_SOFT_WRAPS" value="CONSOLE" />
+    <option name="IS_VIRTUAL_SPACE" value="true" />
+    <option name="IS_ENSURE_NEWLINE_AT_EOF" value="true" />
+    <option name="QUICK_DOC_ON_MOUSE_OVER_DELAY_MS" value="400" />
+    <option name="ARE_LINE_NUMBERS_SHOWN" value="true" />
+    <option name="IS_CAMEL_WORDS" value="true" />
+  </component>
+  <component name="XmlEditorOptions">
+    <option name="insertQuotesForAttributeValue" value="false" />
+  </component>
+</application>
