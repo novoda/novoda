@@ -1,6 +1,8 @@
 IDE Standard Setup
 ================
 
+** DEPRECATED ** No longer keeps up with the Intellij / Android Studio settings.
+
 Novoda Eclipse IDE setup
  - 'so everyone is working from the same book'
 
