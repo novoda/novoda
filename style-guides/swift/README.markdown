@@ -54,6 +54,10 @@ The overarching goals are conciseness, readability, and simplicity.
 
 Consider warnings to be errors. This rule informs many stylistic decisions such as not to use the `++` or `--` operators, C-style for loops, or strings as selectors.
 
+You might also want to have the compiler enforce the above by changing your project settings to treat all warnings as errors so that your builds will fail if warnings are generated. Select your project file then search for "treat warnings" in the "Build Settings" tab. This can also be done per target, rather than for the entire project.
+
+![Treat warnings as errors](screens/treat_warnings_as_errors.png)
+
 ## Naming
 
 Use descriptive names with camel case for classes, methods, variables, etc. Type names (classes, structures, enumerations and protocols) should be capitalized, while method names and variables should start with a lower case letter.
