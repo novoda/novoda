@@ -122,7 +122,7 @@ Following Apple's [API Design Guidelines](https://swift.org/documentation/api-de
 
 ### Enumerations
 
-Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use `lowerCamelCase` for enumeration values.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use *lowerCamelCase* for enumeration values.
 
 ```swift
 enum Shape {
