@@ -97,22 +97,22 @@ let userId: UserId
 For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
 
 ```swift
-func dateFromString(dateString: String) -> NSDate
-func convertPointAt(column column: Int, row: Int) -> CGPoint
-func timedAction(afterDelay delay: NSTimeInterval, perform action: SKAction) -> SKAction!
+func date(from source: String) -> NSDate
+func pointAt(column column: Int, row: Int) -> CGPoint
+func action(from action: SKAction, afterDelay delay: NSTimeInterval) -> SKAction!
 
 // would be called like this:
-dateFromString("2014-03-14")
-convertPointAt(column: 42, row: 13)
-timedAction(afterDelay: 1.0, perform: someOtherAction)
+date(from: "2016-07-21")
+pointAt(column: 42, row: 13)
+action(from: someSKAction, afterDelay: 1.0)
 ```
 
 For methods, follow the standard Apple convention of referring to the first parameter in the method name:
 
 ```swift
 class Counter {
-  func combineWith(otherCounter: Counter, options: Dictionary?) { ... }
-  func incrementBy(amount: Int) { ... }
+  func combine(with otherCounter: Counter, options: Dictionary?) { ... }
+  func increment(by amount: Int) { ... }
 }
 ```
 
