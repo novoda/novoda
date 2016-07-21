@@ -941,7 +941,7 @@ if (name == "Hello") {
 
 ## Copyright Statement
 
-We do not include any copyright statements in the source files.
+Do not include any copyright statements in the source files.
 
 ## Smiley Face
 
