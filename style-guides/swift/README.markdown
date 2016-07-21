@@ -50,7 +50,6 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
 * [Copyright Statement](#copyright-statement)
-* [Smiley Face](#smiley-face)
 * [Credits](#credits)
 
 
