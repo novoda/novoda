@@ -118,11 +118,11 @@ class Counter {
 
 ### Protocols
 
-Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions), protocols names that describe what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocols names that describe an ability should end in -ing, -able, or -ible. Examples: `Equatable`, `Resizing`.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions), protocol names describing what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocol names which describe an ability should end in -*ing*, -*able*, or -*ible*. Examples: `Equatable`, `Resizing`.
 
 ### Enumerations
 
-Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use lowerCamelCase for enumeration values.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use `lowerCamelCase` for enumeration values.
 
 ```swift
 enum Shape {
@@ -137,11 +137,11 @@ enum Shape {
 
 When referring to functions in prose (tutorials, books, comments) include the required parameter names from the caller's perspective or `_` for unnamed parameters. Examples:
 
-> Call `convertPointAt(column:row:)` from your own `init` implementation.
+> Call `pointAt(column:row:)` from your own `init` implementation.
 >
-> If you call `dateFromString(_:)` make sure that you provide a string with the format "yyyy-MM-dd".
+> If you call `date(from:)` make sure...
 >
-> If you call `timedAction(afterDelay:perform:)` from `viewDidLoad()` remember to provide an adjusted delay value and an action to perform.
+> If you call `action(from:afterDelay:)` from `viewDidLoad()` remember ...
 >
 > You shouldn't call the data source method `tableView(_:cellForRowAtIndexPath:)` directly.
 
@@ -152,7 +152,7 @@ This is the same as the `#selector` syntax. When in doubt, look at how Xcode lis
 
 ### Class Prefixes
 
-Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
+Swift types are automatically namespaced by the module that contains them and you should not add a class prefix. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion, which should be rare.
 
 ```swift
 import SomeModule
@@ -162,7 +162,7 @@ let myClass = MyModule.UsefulClass()
 
 ### Selectors
 
-Selectors are Obj-C methods that act as handlers for many Cocoa and Cocoa Touch APIs. Prior to Swift 2.2, they were specified using type unsafe strings. This now causes a compiler warning. The "Fix it" button replaces these strings with the **fully qualified** type safe selector. Often, however, you can use context to shorten the expression. This is the preferred style.
+Selectors are Objective-C methods that act as handlers for many Cocoa and Cocoa Touch APIs. Prior to Swift 2.2, they were specified using type-unsafe strings. This now causes a compiler warning. The "Fix it" button replaces these strings with the **fully qualified** type-safe selector. Often, however, you can use context to shorten the expression. This is the preferred style.
 
 **Preferred:**
 ```swift
@@ -244,9 +244,7 @@ For UIKit view controllers, consider grouping lifecycle, custom accessors, and I
 
 ### Unused Code
 
-Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
-
-Aspirational methods not directly associated with the tutorial whose implementation simply calls the super class should also be removed. This includes any empty/unused UIApplicationDelegate methods.
+Unused (dead) code, including Xcode template code and placeholder comments should be removed.
 
 **Not Preferred:**
 ```swift
