@@ -118,11 +118,11 @@ class Counter {
 
 ### Protocols
 
-Following Apple's API Design Guidelines, protocols names that describe what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocols names that describe an ability should end in -ing, -able, or -ible. Examples: `Equatable`, `Resizing`.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions), protocols names that describe what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocols names that describe an ability should end in -ing, -able, or -ible. Examples: `Equatable`, `Resizing`.
 
 ### Enumerations
 
-Following Apple's API Design Guidelines for Swift 3, use lowerCamelCase for enumeration values.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use lowerCamelCase for enumeration values.
 
 ```swift
 enum Shape {
