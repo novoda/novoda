@@ -24,7 +24,7 @@ The overarching goals are conciseness, readability, and simplicity.
 * [Classes and Structures](#classes-and-structures)
   * [Use of Self](#use-of-self)
   * [Protocol Conformance](#protocol-conformance)
-  * [Computed Properties](#computed-properties)
+  * [Computed c](#computed-properties)
   * [Final](#final)
 * [Function Declarations](#function-declarations)
 * [Closure Expressions](#closure-expressions)
@@ -409,21 +409,21 @@ class BoardLocation {
 
 ### Computed Properties
 
-For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
+Always use a get clause. This is to avoid confusion with other constructs and reduce cognitive load
 
 **Preferred:**
 ```swift
 var diameter: Double {
-  return radius * 2
+  get {
+    return radius * 2
+  }
 }
 ```
 
 **Not Preferred:**
 ```swift
 var diameter: Double {
-  get {
-    return radius * 2
-  }
+  return radius * 2
 }
 ```
 
