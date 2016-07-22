@@ -52,9 +52,9 @@ The overarching goals are conciseness, readability, and simplicity.
 
 ## Correctness
 
-Consider warnings to be errors. This rule informs many stylistic decisions such as not to use the `++` or `--` operators, C-style for loops, or strings as selectors.
+We are in favor of considering all warnings as errors. This rule informs many stylistic decisions such as not to use the `++` or `--` operators, C-style for loops, or strings as selectors and, more importantly, forces us to deal with warnings as soon as they crop up.
 
-You might also want to have the compiler enforce the above by changing your project settings to treat all warnings as errors so that your builds will fail if warnings are generated. Select your project file then search for "treat warnings" in the "Build Settings" tab. This can also be done per target, rather than for the entire project.
+In order to have the compiler enforce the decision above and have your builds fail if warnings are generated, change your project settings as follows: select your project file, search for "treat warnings" in the "Build Settings" tab, then change the appropriate entry, as illustrated below. This can also be done per target, rather than for the entire project.
 
 ![Treat warnings as errors](screens/treat_warnings_as_errors.png)
 
