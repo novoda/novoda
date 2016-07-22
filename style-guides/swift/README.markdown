@@ -941,7 +941,7 @@ if (name == "Hello") {
 
 ## Copyright Statement
 
-Do not include any copyright statements in the source files.
+Do not include any copyright statements in the source files, or any other banner header. Remove any default header provided by Xcode templates.
 
 ## Smiley Face
 
