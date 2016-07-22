@@ -212,7 +212,7 @@ Use extensions to organize your code into logical blocks of functionality. Each 
 ### Protocol Conformance
 
  In particular, when adding protocol conformance to a model, don't add the conformance in an extension. This is to highlight the code smell of using inheritance over delegation. Any time it is possible to create this relationship using delegation, do so.
- 
+
 
 **Not Preferred:**
 ```swift
@@ -332,7 +332,9 @@ Avoid block comments inline with code, as the code should be as self-documenting
 
 Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
 
-Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
+~Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.~
+
+*It seems to me that the motivation for reference types and the example used to illustrate it are missing the point. Reference semantics is not about identity but about sharing, more especifically, unintended sharing. Value types are copied, reference types are shared. That's the main difference. For example, it seems to me that it's perfectly fine to have a person be represented by a struct.*
 
 Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
 
