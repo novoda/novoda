@@ -212,7 +212,7 @@ Use extensions to organize your code into logical blocks of functionality. Each 
 ### Protocol Conformance
 
  In particular, when adding protocol conformance to a model, don't add the conformance in an extension. This is to highlight the code smell of using inheritance over delegation. Any time it is possible to create this relationship using delegation, do so.
- 
+
 
 **Not Preferred:**
 ```swift
@@ -386,8 +386,6 @@ The example above demonstrates the following style guidelines:
 
 
 ### Use of Self
-
-For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
 
 Always use `self` for property names in initializers. Otherwise, avoid using `self` unless its use is required by the compiler:
 
