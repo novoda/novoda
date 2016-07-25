@@ -370,14 +370,14 @@ class Circle: Shape {
   }
 
   func describe() -> String {
-    return "I am a circle at \(centerString()) with an area of \(computeArea())"
+    return "I am a circle at \(centerAsString()) with an area of \(area())"
   }
 
-  override func computeArea() -> Double {
+  override func area() -> Double {
     return M_PI * radius * radius
   }
 
-  private func centerString() -> String {
+  private func centerAsString() -> String {
     return "(\(x),\(y))"
   }
 }
