@@ -848,9 +848,9 @@ func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies 
   }
   
   guard 
-     let inputData = inputData 
+  	  let inputData = inputData 
   else { 
-  	  throw FFTError.noInputData 
+  	  throw FFTError.noInputData
   }
 
   // use context and input to compute the frequencies
