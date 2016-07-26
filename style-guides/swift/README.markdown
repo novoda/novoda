@@ -868,7 +868,11 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 
 **Preferred:**
 ```swift
-guard let number1 = number1, number2 = number2, number3 = number3 else { fatalError("impossible") }
+guard
+	let number1 = number1,
+	let number2 = number2,
+	let number3 = number3
+	else { fatalError("impossible") }
 // do something with numbers
 ```
 
