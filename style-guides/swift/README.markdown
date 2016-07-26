@@ -836,7 +836,6 @@ When coding with conditionals, the left hand margin of the code should be the "g
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
 
   guard let context = context else { throw FFTError.noContext }
-  
   guard let inputData = inputData else { throw FFTError.noInputData }
 
   // use context and input to compute the frequencies
