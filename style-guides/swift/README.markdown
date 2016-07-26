@@ -748,9 +748,9 @@ Extend object lifetime using the `[weak self]` and `guard let strongSelf = self 
 resource.request().onComplete { [weak self] response in
   
   guard 
-  	let strongSelf = self 
+  	  let strongSelf = self 
   else { 
-  	return 
+  	  return 
   }
   
   let model = strongSelf.updateModel(response)
@@ -842,15 +842,15 @@ When coding with conditionals, the left hand margin of the code should be the "g
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
 
   guard 
-  	let context = context 
+  	  let context = context 
   else { 
-  	throw FFTError.noContext 
+  	  throw FFTError.noContext 
   }
   
   guard 
-  	let inputData = inputData 
+     let inputData = inputData 
   else { 
-  	throw FFTError.noInputData 
+  	  throw FFTError.noInputData 
   }
 
   // use context and input to compute the frequencies
