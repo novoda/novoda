@@ -7,7 +7,12 @@ Novoda IDE setup
 
 -----
 
-<h3> Eclipse <h3>
-<h3> IntelliJ IDEA (Android Studio) <h3>
+### Eclipse
+
+### IntelliJ IDEA (Android Studio)
+
+### Xcode
+
+You can install the templates by copying the `Template` folder inside the `xcode` folder to `/Library/Developer/Xcode/` or run `./install-templates.sh` from the xcode folder.
 
 -----

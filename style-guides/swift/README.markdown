@@ -51,7 +51,11 @@ The overarching goals are conciseness, readability, and simplicity.
 
 ## Correctness
 
-Consider warnings to be errors. This rule informs many stylistic decisions such as not to use the `++` or `--` operators, C-style for loops, or strings as selectors.
+We are in favor of considering all warnings as errors. This rule informs many stylistic decisions such as not to use the `++` or `--` operators, C-style for loops, or strings as selectors and, more importantly, forces us to deal with warnings as soon as they crop up.
+
+In order to have the compiler enforce the decision above and have your builds fail if warnings are generated, change your project settings as follows: select your project file, search for "treat warnings" in the "Build Settings" tab, then change the appropriate entry, as illustrated below. This can also be done per target, rather than for the entire project.
+
+![Treat warnings as errors](screens/treat_warnings_as_errors.png)
 
 ## Naming
 
@@ -211,10 +215,9 @@ Use extensions to organize your code into logical blocks of functionality. Each 
 
 ### Protocol Conformance
 
- In particular, when adding protocol conformance to a model, don't add the conformance in an extension. This is to highlight the code smell of using inheritance over delegation. Any time it is possible to create this relationship using delegation, do so.
+ In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
 
-
-**Not Preferred:**
+**Preferred:**
 ```swift
 class MyViewcontroller: UIViewController {
   // class stuff here
@@ -228,6 +231,13 @@ extension MyViewcontroller: UITableViewDataSource {
 // MARK: - UIScrollViewDelegate
 extension MyViewcontroller: UIScrollViewDelegate {
   // scroll view delegate methods
+}
+```
+
+**Not Preferred:**
+```swift
+class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+  // all methods
 }
 ```
 
@@ -861,7 +871,11 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 
 **Preferred:**
 ```swift
-guard let number1 = number1, number2 = number2, number3 = number3 else { fatalError("impossible") }
+guard
+	let number1 = number1,
+	let number2 = number2,
+	let number3 = number3
+	else { fatalError("impossible") }
 // do something with numbers
 ```
 
@@ -929,30 +943,7 @@ if (name == "Hello") {
 
 ## Copyright Statement
 
-The following copyright statement should be included at the top of every source
-file:
-
-    /**
-     * Copyright (c) 2016 Razeware LLC
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
+Do not include any copyright statements in the source files, or any other banner header. Remove any default header provided by Xcode templates.
 
 ## Credits
 
