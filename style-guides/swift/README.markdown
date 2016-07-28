@@ -215,7 +215,7 @@ Use extensions to organize your code into logical blocks of functionality. Each 
 
 ### Protocol Conformance
 
- In particular, when adding protocol conformance to a model, don't add the conformance in an extension. This is to highlight the code smell of using inheritance over delegation. Any time it is possible to create this relationship using delegation, do so.
+ In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
 
 **Preferred:**
 ```swift
