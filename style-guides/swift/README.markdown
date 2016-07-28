@@ -460,7 +460,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, use a new line for each parameter. Xcode should add an extra indent on subsequent lines automatically, but if it does not, align with the first parameter. Return type goes on the same line:
+For functions with long signatures, use a new line for each parameter with default indentation. Return type goes on the last line:
 
 **Preferred:**
 ```swift
