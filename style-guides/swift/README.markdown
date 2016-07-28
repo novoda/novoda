@@ -397,13 +397,12 @@ The example above demonstrates the following style guidelines:
 
 ### Use of Self
 
-For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
-
-Use `self` when required to differentiate between property names and arguments in initializers, and when referencing properties in closure expressions (as required by the compiler):
+Always use `self` for property names in initializers. Otherwise, avoid using `self` unless its use is required by the compiler:
 
 ```swift
 class BoardLocation {
-  let row: Int, column: Int
+  let row: Int
+  let column: Int
 
   init(row: Int, column: Int) {
     self.row = row
