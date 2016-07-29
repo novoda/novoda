@@ -138,7 +138,7 @@ enum Shape {
 
 ### Prose
 
-When referring to functions in prose (tutorials, books, comments) include the required parameter names from the caller's perspective or `_` for unnamed parameters. Examples:
+When referring to functions in prose include the required parameter names from the caller's perspective or `_` for unnamed parameters. Examples:
 
 > Call `convertPointAt(column:row:)` from your own `init` implementation.
 >
@@ -247,9 +247,9 @@ For UIKit view controllers, consider grouping lifecycle, custom accessors, and I
 
 ### Unused Code
 
-Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
+Unused (dead) code, including Xcode template code and placeholder comments should be removed.
 
-Aspirational methods not directly associated with the tutorial whose implementation simply calls the super class should also be removed. This includes any empty/unused UIApplicationDelegate methods.
+Aspirational methods not directly associated with the current code whose implementation simply calls the super class should also be removed. This includes any empty/unused UIApplicationDelegate methods.
 
 **Not Preferred:**
 ```swift
@@ -751,7 +751,7 @@ let value = max(x,y,z)  // another free function that feels natural
 
 ## Memory Management
 
-Code (even non-production, tutorial demo code) should not create reference cycles. Analyze your object graph and prevent strong cycles with `weak` and `unowned` references. Alternatively, use value types (`struct`, `enum`) to prevent cycles altogether.
+Code (even non-production, demo code) should not create reference cycles. Analyze your object graph and prevent strong cycles with `weak` and `unowned` references. Alternatively, use value types (`struct`, `enum`) to prevent cycles altogether.
 
 ### Extending object lifetime
 
@@ -786,7 +786,7 @@ resource.request().onComplete { [weak self] response in
 
 ## Access Control
 
-Full access control annotation in tutorials can distract from the main topic and is not required. Using `private` appropriately, however, adds clarity and promotes encapsulation. Use `private` as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction` and `@IBOutlet`.
+Full access control annotation in code can distract from the main topic and is not required. Using `private` appropriately, however, adds clarity and promotes encapsulation. Use `private` as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction` and `@IBOutlet`.
 
 **Preferred:**
 ```swift
