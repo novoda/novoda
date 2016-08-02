@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.minimalApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.simplifiedCocoaTouchApplicationBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>A basic project without storyboards, except LaunchScreen, or default files, except a bare-bones AppDelegate</string>
+	<key>SortOrder</key>
+	<integer>1000</integer>
+</dict>
+</plist>
