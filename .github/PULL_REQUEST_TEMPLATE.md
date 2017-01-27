@@ -10,7 +10,7 @@ _Here you can talk more about the technical details or any interesting points_
 
 ### Test(s) added 
 
- _What tests did you add? If none, explain why_ 
+_Why did you add tests around the areas you did? If none, explain why_
 
 ### Screenshots
 
