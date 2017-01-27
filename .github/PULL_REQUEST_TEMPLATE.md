@@ -12,9 +12,9 @@ _Here you can talk more about the technical details or any interesting points_
 
 ### Screenshots
 
-| Before | Spec  | After |
-| ------ | ----- | ----- |
-| gif/png _before_ | gif/png _spec_ | _gif/png after_ |
+| Before | After |
+| ------ | ----- |
+| _gif/png before_ | _gif/png after_ |
 
 ### Paired with 
 
