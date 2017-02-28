@@ -100,32 +100,32 @@ let userId: UserId
 For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
 
 ```swift
-func dateFromString(dateString: String) -> NSDate
-func convertPointAt(column column: Int, row: Int) -> CGPoint
-func timedAction(afterDelay delay: NSTimeInterval, perform action: SKAction) -> SKAction!
+func date(from source: String) -> NSDate
+func pointAt(column column: Int, row: Int) -> CGPoint
+func action(from action: SKAction, afterDelay delay: NSTimeInterval) -> SKAction!
 
 // would be called like this:
-dateFromString("2014-03-14")
-convertPointAt(column: 42, row: 13)
-timedAction(afterDelay: 1.0, perform: someOtherAction)
+date(from: "2016-07-21")
+pointAt(column: 42, row: 13)
+action(from: someSKAction, afterDelay: 1.0)
 ```
 
 For methods, follow the standard Apple convention of referring to the first parameter in the method name:
 
 ```swift
 class Counter {
-  func combineWith(otherCounter: Counter, options: Dictionary?) { ... }
-  func incrementBy(amount: Int) { ... }
+  func combine(with otherCounter: Counter, options: Dictionary?) { ... }
+  func increment(by amount: Int) { ... }
 }
 ```
 
 ### Protocols
 
-Following Apple's API Design Guidelines, protocols names that describe what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocols names that describe an ability should end in -ing, -able, or -ible. Examples: `Equatable`, `Resizing`.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions), protocol names describing what something is should be a noun. Examples: `Collection`, `WidgetFactory`. Protocol names which describe an ability should end in -*ing*, -*able*, or -*ible*. Examples: `Equatable`, `Resizing`.
 
 ### Enumerations
 
-Following Apple's API Design Guidelines for Swift 3, use lowerCamelCase for enumeration values.
+Following Apple's [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions) for Swift 3, use *lowerCamelCase* for enumeration values.
 
 ```swift
 enum Shape {
@@ -140,11 +140,11 @@ enum Shape {
 
 When referring to functions in prose include the required parameter names from the caller's perspective or `_` for unnamed parameters. Examples:
 
-> Call `convertPointAt(column:row:)` from your own `init` implementation.
+> Call `pointAt(column:row:)` from your own `init` implementation.
 >
-> If you call `dateFromString(_:)` make sure that you provide a string with the format "yyyy-MM-dd".
+> If you call `date(from:)` make sure...
 >
-> If you call `timedAction(afterDelay:perform:)` from `viewDidLoad()` remember to provide an adjusted delay value and an action to perform.
+> If you call `action(from:afterDelay:)` from `viewDidLoad()` remember ...
 >
 > You shouldn't call the data source method `tableView(_:cellForRowAtIndexPath:)` directly.
 
@@ -155,7 +155,7 @@ This is the same as the `#selector` syntax. When in doubt, look at how Xcode lis
 
 ### Class Prefixes
 
-Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
+Swift types are automatically namespaced by the module that contains them and you should not add a class prefix. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion, which should be rare.
 
 ```swift
 import SomeModule
@@ -165,7 +165,7 @@ let myClass = MyModule.UsefulClass()
 
 ### Selectors
 
-Selectors are Obj-C methods that act as handlers for many Cocoa and Cocoa Touch APIs. Prior to Swift 2.2, they were specified using type unsafe strings. This now causes a compiler warning. The "Fix it" button replaces these strings with the **fully qualified** type safe selector. Often, however, you can use context to shorten the expression. This is the preferred style.
+Selectors are Objective-C methods that act as handlers for many Cocoa and Cocoa Touch APIs. Prior to Swift 2.2, they were specified using type-unsafe strings. This now causes a compiler warning. The "Fix it" button replaces these strings with the **fully qualified** type-safe selector. Often, however, you can use context to shorten the expression. This is the preferred style.
 
 **Preferred:**
 ```swift
@@ -352,7 +352,8 @@ Here's an example of a well-styled class definition:
 
 ```swift
 class Circle: Shape {
-  var x: Int, y: Int
+  var x: Int
+  var y: Int
   var radius: Double
   var diameter: Double {
     get {
@@ -374,14 +375,14 @@ class Circle: Shape {
   }
 
   func describe() -> String {
-    return "I am a circle at \(centerString()) with an area of \(computeArea())"
+    return "I am a circle at \(centerAsString()) with an area of \(area())"
   }
 
-  override func computeArea() -> Double {
+  override func area() -> Double {
     return M_PI * radius * radius
   }
 
-  private func centerString() -> String {
+  private func centerAsString() -> String {
     return "(\(x),\(y))"
   }
 }
@@ -390,7 +391,7 @@ class Circle: Shape {
 The example above demonstrates the following style guidelines:
 
  + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
- + Define multiple variables and structures on a single line if they share a common purpose / context.
+ + Define multiple variables and structures on separate lines even if they share a common purpose / context.
  + Indent getter and setter definitions and property observers.
  + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
 
