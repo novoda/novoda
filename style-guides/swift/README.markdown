@@ -215,9 +215,26 @@ Use extensions to organize your code into logical blocks of functionality. Each 
 
 ### Protocol Conformance
 
- In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
-
+ In particular, when adding protocol conformance to a model, don't add the conformance in an extension. This is to forcibly highlight the code smell of using inheritance over delegation. Any time it is possible to create this relationship using delegation, do so.
+ 
 **Preferred:**
+```swift
+class MyViewcontroller: UIViewController {
+  
+  self.tableView.dataSource = FooDataSource()
+  self.tableView.delegate = BarDelegate()
+  
+}
+```
+ 
+**Accepted (but not preferred):**
+```swift
+class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+  // all methods
+}
+```
+
+**Not Preferred:**
 ```swift
 class MyViewcontroller: UIViewController {
   // class stuff here
@@ -233,17 +250,6 @@ extension MyViewcontroller: UIScrollViewDelegate {
   // scroll view delegate methods
 }
 ```
-
-**Not Preferred:**
-```swift
-class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
-  // all methods
-}
-```
-
-Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overriden. When to preserve the extension groups is left to the discretion of the author.
-
-For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
 ### Unused Code
 
