@@ -1,5 +1,10 @@
 Importing settings into IntelliJ 12 :
 
-![Step one](http://i1340.photobucket.com/albums/o727/ouchadam/step_one_zps1471d946.png)
-![Step two](http://i1340.photobucket.com/albums/o727/ouchadam/step_two_zpsf67ae60d.png)
-![Step three](http://i1340.photobucket.com/albums/o727/ouchadam/ScreenShot2013-08-21at1143202_zps7f8274d2.png)
+## 1. Open File > Import Settings...
+![Step one](https://user-images.githubusercontent.com/260697/31990559-5ffa46f4-b96d-11e7-844c-d3198e785581.png)
+
+## 2. Select `ide-settings/intellij/novoda-settings.jar`
+![Step two](https://user-images.githubusercontent.com/260697/31990627-8ce6b846-b96d-11e7-9fe3-ba9ebe9d18e3.png)
+
+## 3. Import all components required
+![Step three](https://user-images.githubusercontent.com/260697/31990667-a9d3bcec-b96d-11e7-87e8-2f375651b501.png)
