@@ -1,5 +1,5 @@
 ## Problem
-_Briefly describe the issue you are experiencing / feature you would like to see added. Although the following sections are **Optional** the more information you give, the faster we can resolve this issue for you_
+_Briefly describe the issue you are experiencing / feature you would like to see added. Although the following sections are **Optional** the more information you provide, the faster this issue can be addressed._
 
 ## Environment [Optional]
 * _Version of the project where the issue occurs_
@@ -10,4 +10,4 @@ _Briefly describe the issue you are experiencing / feature you would like to see
 _Explain high level any potential solutions to the issue as you see it_
 
 ## Code to Reproduce the Issue [Optional]
-_Sample code can be given to aid us understand all issues. In particular, sample code allows us to reproduce the issue making it that much easier and faster for us to resolve the issue._
+_Sample code can be given to aid us understand all issues. In particular, sample code facilitates reproducing the issue, making it that much easier and faster for the issue to be addressed._
