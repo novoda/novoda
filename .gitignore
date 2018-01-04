@@ -1,2 +1,8 @@
 .DS_Store
 *~
+
+# IDEA Ignores
+*.ipr
+*.iws
+.idea/
+.gradle/
