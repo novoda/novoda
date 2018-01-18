@@ -4,8 +4,10 @@ At Novoda we use the `team-props` scaffolding system to hold a variety of settin
 It is a simple and expandable system that could also be used for holding application secrets, signing configurations, etc.
 
 This is a template of such scaffolding, ready to be copy-pasted into a new project — or an existing one. It currently uses
-the Novoda Gradle Static Analysis plugin, which is geared towards Java projects. It supports running Checkstyle, Findbugs
-and PMD. It currently does _not_ support Kotlin static analysis such as KtLint and Detekt, nor Android Lint.
+the [Novoda Gradle Static Analysis plugin](https://github.com/novoda/gradle-static-analysis-plugin), which is geared
+towards Java projects. It supports running Checkstyle, Findbugs and PMD.
+
+It currently does _not_ support Kotlin static analysis such as KtLint and Detekt, nor Android Lint.
 
 ## How to use this folder
 
@@ -55,5 +57,6 @@ and PMD. It currently does _not_ support Kotlin static analysis such as KtLint a
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
  6. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
 
-Now all the checks are integrated in your `check` task
- 
+Now all the checks are integrated in your `check` task.
+
+Need a more complicated example, that includes the [Novoda Gradle Build Properties plugin](https://github.com/novoda/gradle-build-properties-plugin), application secrets, git pre-commit hooks, Android Lint, and support for Kotlin tools such as KtLint and Detekt, please check out the [Squanchy-android](https://github.com/squanchy-dev/squanchy-android/) open source project, which is a testing ground for the evolution of this scaffolding.
