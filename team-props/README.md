@@ -44,6 +44,16 @@ and PMD. It currently does _not_ support Kotlin static analysis such as KtLint a
     ```groovy
     apply from: teamPropsFile('android-code-quality.gradle')
     ```
- 5. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
- 6. Now all the checks are integrated in your `check` task
+ 5. Add this closure to the root `build.gradle` file:
+    ```groovy
+    ext {
+        checkstyleVersion = '8.7'
+        findbugsVersion = '3.0.1'
+        pmdVersion = '6.0.0'
+    }
+    ```
+    Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
+ 6. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
+
+Now all the checks are integrated in your `check` task
  
