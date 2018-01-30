@@ -13,14 +13,14 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
 
  1. Copy this folder to the root of your Android project's repository
  2. Add this method to the root `build.gradle` file:
-    ```groovy
+    ```gradle
     def teamPropsFile(propsFile) {
         def teamPropsDir = file('team-props')
         return new File(teamPropsDir, propsFile)
     }
     ```
  3. Make sure you import the Novoda Gradle Static Analysis plugin as a dependency in the `buildscript` of the root `build.gradle` file:
-    ```groovy
+    ```gradle
     buildscript {
         repositories {
             // ...
@@ -36,26 +36,38 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
     }
     ```
  4. Make sure you have a `subprojects` closure in the root `build.gradle` file, and it contains this statement:
-    ```groovy
+    ```gradle
     subprojects {
         // ...
         apply from: teamPropsFile('static-analysis.gradle')
     }
     ```
  4. Add this statement at the bottom of the root `build.gradle` file:
-    ```groovy
+    ```gradle
     apply from: teamPropsFile('android-code-quality.gradle')
     ```
  5. Add this closure to the root `build.gradle` file:
-    ```groovy
+    ```gradle
     ext {
-        checkstyleVersion = '8.7'
+        checkstyleVersion = '8.8'
         findbugsVersion = '3.0.1'
-        pmdVersion = '6.0.0'
+        pmdVersion = '6.0.1'
     }
     ```
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
  6. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
+ 7. Add the following Lint configuration to the `build.gradle` of all your Android projects:
+    ```gradle
+    //...
+    android {
+        //...
+        lintOptions {
+            lintConfig teamPropsFile('static-analysis/lint-config.xml')
+            abortOnError true
+            warningsAsErrors true
+        }
+    }
+    ```
 
 Now all the checks are integrated in your `check` task.
 
