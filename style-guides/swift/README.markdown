@@ -70,7 +70,7 @@ Strive to follow the fundamental principles outline in the [API Design Guideline
 * Use terminology well. Take care to use terms in a way that don't surprise experts or confuse beginners - follow the [Principle of Least Astonishment (POLA)](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 * Use precedent for names where it exists
 
-###Identifiers
+### Identifiers
 
 Use descriptive names with camel case for classes, methods, variables, etc. Type names (classes, structures, enumerations and protocols) should be capitalized, while method names and variables should start with a lower case letter.
 
@@ -122,7 +122,7 @@ let isOnFire: Bool
 let burning: Bool 
 ``` 
 
-###Methods and Functions
+### Methods and Functions
 
 In general, prefer methods and properties over free functions. Always ensure that the intent of the method is clear at the call site. The [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) set out a number of conventions for different kinds of methods
 
