@@ -62,7 +62,7 @@ In order to have the compiler enforce the decision above and have your builds fa
 
 ## Naming
 
-###Fundamentals
+### Fundamentals
 Strive to follow the fundamental principles outline in the [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions). Pay particular attention to the following conventions:
 
 * Clarity at the point of use is your most important goal
