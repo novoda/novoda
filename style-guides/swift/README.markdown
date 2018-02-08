@@ -67,8 +67,8 @@ Strive to follow the fundamental principles outline in the [API Design Guideline
 
 * Clarity at the point of use is your most important goal
 * Clarity is more important than brevity
-* Use terminology well. Take care to use terms in a way that don't surprise experts or confuse beginners - follow the [Principle of Least Astonishment (POLA)](https://en.wikipedia.org/wiki/Principle_of_least_astonishment). Use precedent for names where 
-* using precedent for names
+* Use terminology well. Take care to use terms in a way that don't surprise experts or confuse beginners - follow the [Principle of Least Astonishment (POLA)](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
+* Use precedent for names where it exists
 
 ###Identifiers
 
@@ -124,9 +124,8 @@ let burning: Bool
 
 ###Methods and Functions
 
-In general, prefer methods and properties over free functions. Always ensure that the intent of the method is clear at the call site. The [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) set out a number of conventions for different kinds of method
+In general, prefer methods and properties over free functions. Always ensure that the intent of the method is clear at the call site. The [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) set out a number of conventions for different kinds of methods
 
-  * sometimes compensating for weak type information (e.g the `sender` parameter in an `@IBAction method`)
   * verb methods follow the -ed, -ing rule for the non-mutating version
   * noun methods follow the formX rule for the mutating version 
   * naming methods for their side effects
@@ -136,7 +135,8 @@ In general, prefer methods and properties over free functions. Always ensure tha
   * avoiding overloads on return type
   * labeling closure and tuple parameters
   * taking advantage of default parameters 
-  * place default parameters at the end of an argument tlist
+  * placing default parameters at the end of an argument list
+  * compensating for weak type information in order to clarify a parameter’s role (e.g. using button instead of 'sender' in an @IBAction method)
 
 For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
 
