@@ -8,6 +8,9 @@ The overarching goals are conciseness, readability, and simplicity.
 
 * [Correctness](#correctness)
 * [Naming](#naming)
+  * [Fundamentals](#fundamentals)
+  * [Identifiers](#identifiers)
+  * [Methods](#methods)
   * [Protocols](#protocols)
   * [Enumerations](#enumerations)
   * [Prose](#prose)
@@ -59,6 +62,16 @@ In order to have the compiler enforce the decision above and have your builds fa
 
 ## Naming
 
+### Fundamentals
+Strive to follow the fundamental principles outline in the [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions). Pay particular attention to the following conventions:
+
+* Clarity at the point of use is your most important goal
+* Clarity is more important than brevity
+* Use terminology well. Take care to use terms in a way that don't surprise experts or confuse beginners - follow the [Principle of Least Astonishment (POLA)](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
+* Use precedent for names where it exists
+
+### Identifiers
+
 Use descriptive names with camel case for classes, methods, variables, etc. Type names (classes, structures, enumerations and protocols) should be capitalized, while method names and variables should start with a lower case letter.
 
 **Preferred:**
@@ -97,6 +110,34 @@ let uRLString: UrlString
 let userId: UserId
 ```
 
+Boolean types should read like assertions:
+
+**Preferred**
+```swift
+let isOnFire: Bool
+```
+
+**Not Preferred**
+```swift
+let burning: Bool 
+``` 
+
+### Methods and Functions
+
+In general, prefer methods and properties over free functions. Always ensure that the intent of the method is clear at the call site. The [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) set out a number of conventions for different kinds of methods
+
+  * verb methods follow the -ed, -ing rule for the non-mutating version
+  * noun methods follow the formX rule for the mutating version 
+  * naming methods for their side effects
+  * using names based on roles, not types
+  * striving for fluent usage (as far as possible code should read as idiomatic English prose)
+  * giving the same base name to methods that share the same meaning
+  * avoiding overloads on return type
+  * labeling closure and tuple parameters
+  * taking advantage of default parameters 
+  * placing default parameters at the end of an argument list
+  * compensating for weak type information in order to clarify a parameter’s role (e.g. using button instead of 'sender' in an @IBAction method)
+
 For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
 
 ```swift
@@ -118,6 +159,8 @@ class Counter {
   func increment(by amount: Int) { ... }
 }
 ```
+
+Parameter names should be carefully chosen so the code is self-documenting as far as possible.  The method and parameter names should include all necessary words, while omitting any needless words.
 
 ### Protocols
 
@@ -148,10 +191,11 @@ When referring to functions in prose include the required parameter names from t
 >
 > You shouldn't call the data source method `tableView(_:cellForRowAtIndexPath:)` directly.
 
-This is the same as the `#selector` syntax. When in doubt, look at how Xcode lists the method in the jump bar – our style here matches that.
+This is the same as the `#selector` syntax. When in doubt, look at how Xcode lists the method in the jump bar – our style here matches that. 
 
 ![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
 
+If more than one method with the same name and parameter names exists, include type names as necessary to avoid ambiguity. 
 
 ### Class Prefixes
 
@@ -884,10 +928,10 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 **Preferred:**
 ```swift
 guard
-	let number1 = number1,
-	let number2 = number2,
-	let number3 = number3
-	else { fatalError("impossible") }
+  let number1 = number1,
+  let number2 = number2,
+  let number3 = number3
+  else { fatalError("impossible") }
 // do something with numbers
 ```
 
