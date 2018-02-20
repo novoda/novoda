@@ -28,9 +28,9 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
         }
 
         // ...
-        
+
         dependencies {
-            classpath 'com.novoda:gradle-static-analysis-plugin:0.4.1'
+            classpath 'com.novoda:gradle-static-analysis-plugin:0.5.2'
             // ...
         }
     }
