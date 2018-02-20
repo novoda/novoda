@@ -1,4 +1,4 @@
-version = '0.1'
+apply from: 'gradle/publish-rules.gradle'
 
 buildscript {
     repositories {
@@ -7,23 +7,4 @@ buildscript {
     dependencies {
         classpath 'com.novoda:bintray-release:0.8.0'
     }
-}
-
-apply plugin: 'java'
-apply plugin: 'com.novoda.bintray-release'
-
-sourceSets {
-    main {
-        resources {
-            srcDirs = ['team-props/static-analysis']
-        }
-    }
-}
-
-publish {
-    userOrg = 'novoda'
-    groupId = 'com.novoda'
-    artifactId = 'static-analysis-rules'
-    publishVersion = project.version
-    website = 'www.novoda.com'
 }
