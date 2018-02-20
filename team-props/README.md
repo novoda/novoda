@@ -28,7 +28,7 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
         }
 
         // ...
-
+        
         dependencies {
             classpath 'com.novoda:gradle-static-analysis-plugin:0.5.2'
             // ...
@@ -42,11 +42,11 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
         apply from: teamPropsFile('static-analysis.gradle')
     }
     ```
- 4. Add this statement at the bottom of the root `build.gradle` file:
+ 5. Add this statement at the bottom of the root `build.gradle` file:
     ```gradle
     apply from: teamPropsFile('android-code-quality.gradle')
     ```
- 5. Add this closure to the root `build.gradle` file:
+ 6. Add this closure to the root `build.gradle` file:
     ```gradle
     ext {
         checkstyleVersion = '8.8'
@@ -55,8 +55,20 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
     }
     ```
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
- 6. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
- 
+ 7. Configure the static analysis settings from the `team-props/static-analysis.gradle` file.
+ 8. Configure detekt (optional)
+
+    In case you would like to use [detekt](https://github.com/arturbosch/detekt) to analyse your kotlin code, add the following section to the `team-props/static-analysis.gradle` file:
+
+    ```gradle
+    detekt {
+        profile('main') {
+            config = 'rootProject.file('team-props/static-analysis/detekt.yml')'
+        }
+    }
+    ```
+    Also you need to manually add detekt as dependency to your project. More information regarding this can be found [here](https://github.com/novoda/gradle-static-analysis-plugin/blob/master/docs/tools/detekt.md).
+
 Now all the checks are integrated in your `check` task.
 
 Need a more complicated example, that includes the [Novoda Gradle Build Properties plugin](https://github.com/novoda/gradle-build-properties-plugin), application secrets, git pre-commit hooks, Android Lint, and support for Kotlin tools such as KtLint and Detekt, please check out the [Squanchy-android](https://github.com/squanchy-dev/squanchy-android/) open source project, which is a testing ground for the evolution of this scaffolding.
