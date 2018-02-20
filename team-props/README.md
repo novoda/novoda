@@ -56,19 +56,7 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
     ```
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
  6. Configure the static analysis settings from the `team-props/static-analysis.gradle` file
- 7. Add the following Lint configuration to the `build.gradle` of all your Android projects:
-    ```gradle
-    //...
-    android {
-        //...
-        lintOptions {
-            lintConfig teamPropsFile('static-analysis/lint-config.xml')
-            abortOnError true
-            warningsAsErrors true
-        }
-    }
-    ```
-
+ 
 Now all the checks are integrated in your `check` task.
 
 Need a more complicated example, that includes the [Novoda Gradle Build Properties plugin](https://github.com/novoda/gradle-build-properties-plugin), application secrets, git pre-commit hooks, Android Lint, and support for Kotlin tools such as KtLint and Detekt, please check out the [Squanchy-android](https://github.com/squanchy-dev/squanchy-android/) open source project, which is a testing ground for the evolution of this scaffolding.
