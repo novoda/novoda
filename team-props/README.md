@@ -5,9 +5,7 @@ It is a simple and expandable system that could also be used for holding applica
 
 This is a template of such scaffolding, ready to be copy-pasted into a new project — or an existing one. It currently uses
 the [Novoda Gradle Static Analysis plugin](https://github.com/novoda/gradle-static-analysis-plugin), which is geared
-towards Java projects. It supports running Checkstyle, Findbugs and PMD.
-
-It currently does _not_ support Kotlin static analysis such as KtLint and Detekt, nor Android Lint.
+towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint Lint and Detekt for Kotlin.
 
 ## How to use this folder
 
