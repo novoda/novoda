@@ -16,5 +16,5 @@ publish {
     groupId = 'com.novoda'
     artifactId = 'static-analysis-rules'
     publishVersion = project.version
-    website = 'www.novoda.com'
+    website = 'https://github.com/novoda/novoda'
 }
