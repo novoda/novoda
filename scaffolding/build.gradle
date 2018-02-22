@@ -22,6 +22,6 @@ publish {
     userOrg = 'novoda'
     groupId = 'com.novoda'
     artifactId = 'static-analysis-rules'
-    publishVersion = project.version
+    publishVersion = '0.1'
     website = 'https://github.com/novoda/novoda'
 }
