@@ -9,7 +9,7 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
 
 ## How to use this folder
 
- 1. Copy this folder to the root of your Android project's repository
+ 1. Copy the `team-props` folder to the root of your Android project's repository
  2. Add this method to the root `build.gradle` file:
     ```gradle
     def teamPropsFile(propsFile) {
@@ -26,7 +26,7 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
         }
 
         // ...
-        
+
         dependencies {
             classpath 'com.novoda:gradle-static-analysis-plugin:0.5.2'
             // ...
