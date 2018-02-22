@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['team-props/static-analysis']
+        }
+    }
+}
+
+publish {
+    userOrg = 'novoda'
+    groupId = 'com.novoda'
+    artifactId = 'static-analysis-rules'
+    publishVersion = project.version
+    website = 'https://github.com/novoda/novoda'
+}

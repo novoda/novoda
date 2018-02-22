@@ -5,13 +5,11 @@ It is a simple and expandable system that could also be used for holding applica
 
 This is a template of such scaffolding, ready to be copy-pasted into a new project — or an existing one. It currently uses
 the [Novoda Gradle Static Analysis plugin](https://github.com/novoda/gradle-static-analysis-plugin), which is geared
-towards Java projects. It supports running Checkstyle, Findbugs and PMD.
-
-It currently does _not_ support Kotlin static analysis such as KtLint and Detekt, nor Android Lint.
+towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint Lint and Detekt for Kotlin.
 
 ## How to use this folder
 
- 1. Copy this folder to the root of your Android project's repository
+ 1. Copy the `team-props` folder to the root of your Android project's repository
  2. Add this method to the root `build.gradle` file:
     ```gradle
     def teamPropsFile(propsFile) {
@@ -28,7 +26,7 @@ It currently does _not_ support Kotlin static analysis such as KtLint and Detekt
         }
 
         // ...
-        
+
         dependencies {
             classpath 'com.novoda:gradle-static-analysis-plugin:0.5.2'
             // ...
