@@ -43,8 +43,10 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
  5. Add this statement at the bottom of the root `build.gradle` file:
     ```gradle
     apply from: teamPropsFile('android-code-quality.gradle')
+    apply from: teamPropsFile('ci.gradle')
     ```
- 6. Add this closure to the root `build.gradle` file:
+ 6. Configure the `prb` task from the `team-props/static-analysis.gradle` file according to your needs and trigger it from jenkins.
+ 7. Add this closure to the root `build.gradle` file:
     ```gradle
     ext {
         checkstyleVersion = '8.8'
@@ -53,8 +55,8 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
     }
     ```
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
- 7. Configure the static analysis settings from the `team-props/static-analysis.gradle` file.
- 8. Configure detekt (optional)
+ 8. Configure the static analysis settings from the `team-props/static-analysis.gradle` file.
+ 9. Configure detekt (optional)
 
     In case you would like to use [detekt](https://github.com/arturbosch/detekt) to analyse your kotlin code, add the following section to the `team-props/static-analysis.gradle` file:
 
