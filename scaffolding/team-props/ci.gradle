@@ -1,1 +1,3 @@
-task prb(dependsOn: check)
+task prb(dependsOn: subprojects.collect { p ->
+    "$p.name:check"
+})
