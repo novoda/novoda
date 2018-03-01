@@ -42,10 +42,9 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
     ```
  5. Add this statement at the bottom of the root `build.gradle` file:
     ```gradle
-    apply from: teamPropsFile('android-code-quality.gradle')
-    apply from: teamPropsFile('ci.gradle')
+    apply from: teamPropsFile('scaffolding.gradle')
     ```
- 6. Configure the `prb` task from the `team-props/static-analysis.gradle` file according to your needs and trigger it from jenkins.
+ 6. Configure the `prb` task from the `team-props/ci.gradle` file according to your needs and trigger it from jenkins.
  7. Add this closure to the root `build.gradle` file:
     ```gradle
     ext {
