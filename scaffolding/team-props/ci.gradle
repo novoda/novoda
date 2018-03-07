@@ -1,1 +1,4 @@
 task prb(dependsOn: check)
+
+// modify the main job according to your needs, e.g. to run unit and integration tests
+task main(dependsOn: check)
