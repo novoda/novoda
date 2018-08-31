@@ -28,7 +28,7 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
         // ...
 
         dependencies {
-            classpath 'com.novoda:gradle-static-analysis-plugin:0.5.2'
+            classpath 'com.novoda:gradle-static-analysis-plugin:0.6'
             // ...
         }
     }
@@ -44,30 +44,21 @@ towards Java projects. It supports running Checkstyle, Findbugs, PMD, Androint L
     ```gradle
     apply from: teamPropsFile('scaffolding.gradle')
     ```
- 6. Configure the `prb` task from the `team-props/ci.gradle` file according to your needs and trigger it from jenkins.
+ 6. Configure the `prb` task from the `team-props/ci.gradle` file according to your needs and trigger it from Jenkins.
  7. Add this closure to the root `build.gradle` file:
     ```gradle
     ext {
-        checkstyleVersion = '8.8'
+        checkstyleVersion = '8.12'
         findbugsVersion = '3.0.1'
-        pmdVersion = '6.0.1'
+        pmdVersion = '6.6.0'
+        detektVersion = '1.0.0.RC8'
+        ktLint='0.27.0'
     }
     ```
+    You can then use these values in the `staticAnalysis` closure and/or in your build files to configure the version of the tools to use.
     Don't forget to check if there's newer versions of the tools; these are the most recent at the time of writing.
- 8. Configure the static analysis settings from the `team-props/static-analysis.gradle` file.
- 9. Configure detekt (optional)
-
-    In case you would like to use [detekt](https://github.com/arturbosch/detekt) to analyse your kotlin code, add the following section to the `team-props/static-analysis.gradle` file:
-
-    ```gradle
-    detekt {
-        profile('main') {
-            config = 'rootProject.file('team-props/static-analysis/detekt.yml')'
-        }
-    }
-    ```
-    Also you need to manually add detekt as dependency to your project. More information regarding this can be found [here](https://github.com/novoda/gradle-static-analysis-plugin/blob/master/docs/tools/detekt.md).
-
+ 8. Configure the static analysis settings from the `team-props/static-analysis.gradle` file. Please refer to the [Static Analysis plugin documentation](https://github.com/novoda/gradle-static-analysis-plugin/blob/master/README.md#simple-usage) for more details.
+ 
 Now all the checks are integrated in your `check` task.
 
 Need a more complicated example, that includes the [Novoda Gradle Build Properties plugin](https://github.com/novoda/gradle-build-properties-plugin), application secrets, git pre-commit hooks, Android Lint, and support for Kotlin tools such as KtLint and Detekt, please check out the [Squanchy-android](https://github.com/squanchy-dev/squanchy-android/) open source project, which is a testing ground for the evolution of this scaffolding.

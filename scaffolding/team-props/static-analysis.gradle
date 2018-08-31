@@ -1,10 +1,7 @@
 apply plugin: 'com.novoda.static-analysis'
 
 staticAnalysis {
-    penalty {
-        maxErrors = 0
-        maxWarnings = 0
-    }
+    penalty none
 
     checkstyle {
         toolVersion checkstyleVersion
@@ -32,7 +29,24 @@ staticAnalysis {
     
     lintOptions {
         lintConfig rootProject.file('team-props/static-analysis/lint-config.xml')
-        checkReleaseBuilds false
+        includeVariants { variant -> excludeTestAndRelease(variant) }
+        ignoreTestSources true // See https://groups.google.com/forum/#!topic/lint-dev/RGTvK_uHQGQ
+    }
+    
+    detekt {
+        profile('main') {
+            input = "$projectDir/src/main/java"
+            config = rootProject.file('team-props/detekt.yml')
+            filters = '.*test.*,.*/resources/.*,.*/tmp/.*'
+            output = "$projectDir/build/reports/detekt"
+        }
+    }
+
+    ktlint {
+        android true
+        // Note: KtLint supports only minimal configuration via an .editorconfig file
+        // in the project root folder. For an example:
+        // https://github.com/squanchy-dev/squanchy-android/blob/develop/.editorconfig
     }
 }
 
