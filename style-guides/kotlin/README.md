@@ -268,7 +268,8 @@ These funtions are difficult to work with: we don't know what they're doing from
 class GlobalVariablesProducer(
     videoIdParser: (RawResponseId) -> VideoId,
     ageRater: (UserAge) -> AgeRating,
-    durationCalculator: (TimeInMillis) -> VideoDuration) {}
+    durationCalculator: (TimeInMillis) -> VideoDuration
+) {}
 ```
 These functions are easy to work with: we know exaclty what they are doing by just reading the signature. Their types are strong and bound to our domain, so it's harder to pass a wrong value to them. 
 And it's easy to mock them in tests, for example, passing a function that always return a valid `AgeRating` is as simple as passing: `{AgeRating.Valid}` 
