@@ -258,7 +258,8 @@ Interfaces with only one function can be replaced with top level functions. Ther
 class GlobalVariablesProducer(
     videoIdParser: (Int) -> String,
     ageRater: (Int) -> Boolean,
-    durationCalculator: (Int) -> Int) {}
+    durationCalculator: (Int) -> Int
+) {}
 ```
 
 These funtions are difficult to work with: we don't know what they're doing from the signature and they are prone to error because they entry and return types are not restricted to a domain. 
