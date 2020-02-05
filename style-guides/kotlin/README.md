@@ -17,6 +17,13 @@ Not ready yet
  - If we don't like something, we can change it.
  - If we want to change something, we need objective reasons.
 
+## Conversion Guidelines
+
+ - Aim at planning beforehand to isolate the candidate classes for conversion, this should help asses the associated impact and costs involved with the conversion; this should include unit tests. At this point ensure no other feature teams will be touching the candidates, if so consider whether this is the correct time to convert these classes
+ - Use this initial planning to group the conversions into a pull request which will contain only this refactoring; this may include renames, moving objects to more appropriate modules etc. But refrain from adding behavioural changes.
+ - Part of the initial planning should also consider the impact on features and therefore the QA effort required to approve the request and it should be included with the feature development so there is only one QA pass to ensure no regression or bugs have been introduced by the conversion; Unit tests should be extended if applicable and the affected feature should be tested which should include a sanity check of any potential dex guard issues by running a QA build. Pairing with a QA team member if necessary during testing will help ensure all uses cases are covered
+ - And finaly ensure converted code makes sense using correct Kotlin syntax outlined in this document or other team wide agreed Kotlin guidelines
+
 ## Conventions
 
 ### Expression vs block body:
