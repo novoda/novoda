@@ -247,13 +247,40 @@ This depends on its visibility. If we have a `private` sealed class then it is s
 
 ## Functions as parameters
 
-**NOPE**
-Do not pass a function as a parameter in a class constructor if there is only one implementation of the function that you are passing. 
-- This makes is complex to follow up a call hierarchy when there is a bug in the code
-- Is it not clear how many different implementations or providers of that function are in the code
+> Kotlin functions are [first-class](https://en.wikipedia.org/wiki/First-class_function), which means that they can be stored in variables and data structures, passed as arguments to and returned from other higher-order functions. You can operate with functions in any way that is possible for other non-function values.
 
-**YES**
-Pass functions as params in other functions or local private internal classes in the same file
+**YES**: Functions can be passed as parameter to other functions o class constructors
+
+
+Interfaces with only one function can be replaced with top level functions. There are multiple benefits:
+
+  - Functions are stateless: it makes easier to avoid bugs created by undesired internal state changes.
+  - Less code to maintain means less possible errors, fewer maintenance and less changes during refactors.
+  - It simplifies testing: a class receiving a function as a parameter knows for sure that this collaborator is stateles. It's very easy to provide a fake function for testing purposes. 
+
+**NOPE**: Functions that transform from basic types, such as `(Int) -> String` or `(String, Int) -> Boolean` are **NOT** good entry parameter types. In those cases, it's very hard to identify what this function does or where's the implementation. 
+### Bad example of parameter functions:
+
+```kotlin
+class GlobalVariablesProducer(
+    videoIdParser: (Int) -> String,
+    ageRater: (Int) -> Boolean,
+    durationCalculator: (Int) -> Int
+) {}
+```
+
+These funtions are difficult to work with: we don't know what they're doing from the signature and they are prone to error because they entry and return types are not restricted to a domain. 
+
+### Good example of parameter functions:
+```kotlin
+class GlobalVariablesProducer(
+    videoIdParser: (RawResponseId) -> VideoId,
+    ageRater: (UserAge) -> AgeRating,
+    durationCalculator: (TimeInMillis) -> VideoDuration
+) {}
+```
+These functions are easy to work with: we know exaclty what they are doing by just reading the signature. Their types are strong and bound to our domain, so it's harder to pass a wrong value to them. 
+And it's easy to mock them in tests, for example, passing a function that always return a valid `AgeRating` is as simple as passing: `{AgeRating.Valid}` 
 
 ## Interfaces
 
